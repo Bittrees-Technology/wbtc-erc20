@@ -1,6 +1,8 @@
-# btree-erc20
+# wbtc-erc20
 
-![Solidity tests](https://github.com/Bittrees-Technology/btree-erc20/actions/workflows/continuous-integration.yaml/badge.svg)
+![Solidity tests](https://github.com/Bittrees-Technology/wbtc-erc20/actions/workflows/continuous-integration.yaml/badge.svg)
+
+Test WBTC contract with 8-decimal places.
 
 Develop, test and deploy an ERC-20 contract based on OpenZeppelin Solidity framework and Hardhat development environment. Deploy to any EVM blockchain.
 
