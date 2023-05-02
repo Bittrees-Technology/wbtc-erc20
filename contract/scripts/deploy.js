@@ -8,11 +8,11 @@ async function main() {
     );
     console.log('Deployer wallet public key:', deployer.address);
 
-    const Contract = await ethers.getContractFactory('BTREEToken');
+    const Contract = await ethers.getContractFactory('WBTC');
     const contract = await Contract.deploy();
     await contract.deployed();
 
-    console.log(`BTREEToken contract deployed to: ${contract.address}`);
+    console.log(`WBTC contract deployed to: ${contract.address}`);
 }
 
 main()
