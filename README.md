@@ -88,3 +88,43 @@ Roles and Wallets
 -   Minter, Authority (Board of Directors): 0xa657a18cAaFBdb58536B8Ce366A570CD3dbCAc61
 -   Pauser (Core DAO): 0x2268E2b8F7640a29752C5c58b8735906F4E84F60
 -   Recipient is Bittrees Capital: 0x6e4063a6481ab48FED6eeEBceA440d3bFe1e5Dcd <https://app.safe.global/home?safe=eth:0x6e4063a6481ab48FED6eeEBceA440d3bFe1e5Dcd>
+
+## Test Minting with Hardhat
+
+```shell
+cd contract
+npx hardhat console --network testnet
+```
+
+```javascript
+const Contract = await ethers.getContractFactory('WBTC');
+const contract = await Contract.attach(
+    '0x26bE8Ef5aBf9109384856dD25ce1b4344aFd88b0'
+);
+await contract.balanceOf('0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD');
+
+// mint 5,000,000 WBTC
+await contract.mint(
+    '0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD',
+    '500000000000000'
+);
+
+// transfer 0.555 WBTC to another wallet
+await contract.transfer(
+    '0x458788Af51027917462c87AA6959269249CE8B4c',
+    '55500000'
+);
+
+// increaseAllowance by 0.555 WBTC for contract (`0x14dBB93a78B5e89540e902d1E6Ee26C989e08ef0`) wanting to spent it
+// FIRST: ensure you using test wallet that you want to increase allowance for
+await contract.increaseAllowance(
+    '0x14dBB93a78B5e89540e902d1E6Ee26C989e08ef0',
+    '55500000'
+);
+
+// get current allowance for owner and sender contract
+await contract.allowance(
+    '0x458788Af51027917462c87AA6959269249CE8B4c',
+    '0x14dBB93a78B5e89540e902d1E6Ee26C989e08ef0'
+);
+```
