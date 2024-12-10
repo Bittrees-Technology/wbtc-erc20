@@ -73,6 +73,10 @@ Admin role: 0x0
 Minter role: 0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6
 Pauser role: 0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a
 
+### Testnet (Base Sepolia)
+
+Contract: https://sepolia.basescan.org/address/0x5beB73bc1611111C3d5F692a286b31DCDd03Af81#code
+
 ### Testnet (Goerli)
 
 Contract: https://goerli.etherscan.io/address/0x1Ca23BB7dca2BEa5F57552AE99C3A44fA7307B5f
