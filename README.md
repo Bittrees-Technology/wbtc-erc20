@@ -75,7 +75,7 @@ Pauser role: 0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a
 
 ### Testnet (Base Sepolia)
 
-Contract: https://sepolia.basescan.org/address/0x5beB73bc1611111C3d5F692a286b31DCDd03Af81#code
+Contract: https://sepolia.basescan.org/address/0x5beB73bc1611111C3d5F692a286b31DCDd03Af81
 
 ### Testnet (Goerli)
 
@@ -103,15 +103,12 @@ npx hardhat console --network testnet
 ```javascript
 const Contract = await ethers.getContractFactory('WBTC');
 const contract = await Contract.attach(
-    '0x26bE8Ef5aBf9109384856dD25ce1b4344aFd88b0'
+    '0x5beB73bc1611111C3d5F692a286b31DCDd03Af81'
 );
 await contract.balanceOf('0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD');
 
-// mint 5,000,000 WBTC
-await contract.mint(
-    '0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD',
-    '500000000000000'
-);
+// mint 0.555 WBTC
+await contract.mint('0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD', '55500000');
 
 // transfer 0.555 WBTC to another wallet
 await contract.transfer(
