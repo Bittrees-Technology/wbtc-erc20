@@ -73,9 +73,9 @@ Admin role: 0x0
 Minter role: 0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6
 Pauser role: 0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a
 
-### Testnet (Goerli)
+### Testnet (Base Sepolia)
 
-Contract: https://goerli.etherscan.io/address/0x1Ca23BB7dca2BEa5F57552AE99C3A44fA7307B5f
+Contract: https://sepolia.basescan.org/address/0x5beB73bc1611111C3d5F692a286b31DCDd03Af81
 
 Assign minter and pauser role to `0xa657a18cAaFBdb58536B8Ce366A570CD3dbCAc61` and `0xE5350D96FC3161BF5c385843ec5ee24E8B465B2f` via `grantRole` method on contract.
 
@@ -99,15 +99,12 @@ npx hardhat console --network testnet
 ```javascript
 const Contract = await ethers.getContractFactory('WBTC');
 const contract = await Contract.attach(
-    '0x26bE8Ef5aBf9109384856dD25ce1b4344aFd88b0'
+    '0x5beB73bc1611111C3d5F692a286b31DCDd03Af81'
 );
 await contract.balanceOf('0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD');
 
-// mint 5,000,000 WBTC
-await contract.mint(
-    '0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD',
-    '500000000000000'
-);
+// mint 0.555 WBTC
+await contract.mint('0x7435e7f3e6B5c656c33889a3d5EaFE1e17C033CD', '55500000');
 
 // transfer 0.555 WBTC to another wallet
 await contract.transfer(
