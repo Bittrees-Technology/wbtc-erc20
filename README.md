@@ -77,10 +77,6 @@ Pauser role: 0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a
 
 Contract: https://sepolia.basescan.org/address/0x5beB73bc1611111C3d5F692a286b31DCDd03Af81
 
-### Testnet (Goerli)
-
-Contract: https://goerli.etherscan.io/address/0x1Ca23BB7dca2BEa5F57552AE99C3A44fA7307B5f
-
 Assign minter and pauser role to `0xa657a18cAaFBdb58536B8Ce366A570CD3dbCAc61` and `0xE5350D96FC3161BF5c385843ec5ee24E8B465B2f` via `grantRole` method on contract.
 
 ### Mainnet (Ethereum)
